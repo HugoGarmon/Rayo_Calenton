@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Hot Ray</string>
+    <string name="Intensidad">Light intensity: --</string>
+    <string name="Orientacion">Correct orientation: --</string>
+    <string name="Recomendacion">Recommendation: --</string>
+    <string name="RecomendacionPocaLuz">Recommendation: Low light, find a sunnier spot.</string>
+    <string name="RecomendacionMediaLuz">Recommendation: Moderate light, ideal for shade plants.</string>
+    <string name="RecomendacionMuchaLuz">Recommendation: Optimal light for sun-loving plants.</string>
+    <string name="OrientacionBuena">Correct orientation: Yes</string>
+    <string name="OrientacionMala">Correct orientation: No</string>
+</resources>

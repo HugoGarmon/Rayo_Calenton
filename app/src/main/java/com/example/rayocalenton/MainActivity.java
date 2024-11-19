@@ -64,7 +64,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_LIGHT) {
             float lightValue = event.values[0];
-            lightValueText.setText("Intensidad de luz: " + lightValue + " lx");
+            lightValueText.setText(getString(R.string.Intensidad) + " " + lightValue + " lx");
+
 
             // Recomendación basada en la luz
             if (lightValue < 100) {
@@ -83,9 +84,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
             // Verificar orientación (debe estar hacia arriba)
             if (Math.abs(z) > Math.abs(x) && Math.abs(z) > Math.abs(y)) {
-                orientationText.setText("Orientación correcta: Sí");
+                orientationText.setText(R.string.OrientacionMala);
             } else {
-                orientationText.setText("Orientación correcta: No");
+                orientationText.setText(R.string.OrientacionBuena);
             }
         }
     }
