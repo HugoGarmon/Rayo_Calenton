@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Rayo Calenton</string>
+    <string name="Intensidad">Intensidad de luz: --</string>
+    <string name="Orientacion">Orientación correcta: --</string>
+    <string name="Recomendacion">Recomendacion: --</string>
+    <string name="RecomendacionPocaLuz">Recomendación: Poca luz, busca un lugar más soleado.</string>
+    <string name="RecomendacionMediaLuz">Recomendación: Luz moderada, ideal para plantas de sombra.</string>
+    <string name="RecomendacionMuchaLuz">Recomendación: Luz óptima para plantas de sol..</string>
+    <string name="OrientacionBuena">Orientación correcta: Sí</string>
+    <string name="OrientacionMala">Orientación correcta: No</string>
+
+
 </resources>

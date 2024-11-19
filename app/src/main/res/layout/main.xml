@@ -11,7 +11,7 @@
         android:id="@+id/text_light_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Intensidad de luz: --"
+        android:text="@string/Intensidad"
         android:textSize="20sp"
         android:layout_marginBottom="20dp"
         android:gravity="center"/>
@@ -20,7 +20,7 @@
         android:id="@+id/text_orientation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Orientación correcta: --"
+        android:text="@string/Orientacion"
         android:textSize="18sp"
         android:layout_marginBottom="20dp"
         android:gravity="center"/>
@@ -29,7 +29,7 @@
         android:id="@+id/text_recommendation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recomendación: --"
+        android:text="@string/Recomendacion"
         android:textSize="18sp"
         android:gravity="center"/>
 </LinearLayout>

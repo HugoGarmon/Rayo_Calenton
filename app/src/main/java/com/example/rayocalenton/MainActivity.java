@@ -68,11 +68,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
             // Recomendación basada en la luz
             if (lightValue < 100) {
-                recommendationText.setText("Recomendación: Poca luz, busca un lugar más soleado.");
+                recommendationText.setText(R.string.RecomendacionPocaLuz);
             } else if (lightValue < 500) {
-                recommendationText.setText("Recomendación: Luz moderada, ideal para plantas de sombra.");
+                recommendationText.setText(R.string.RecomendacionMediaLuz);
             } else {
-                recommendationText.setText("Recomendación: Luz óptima para plantas de sol.");
+                recommendationText.setText(R.string.RecomendacionMuchaLuz);
             }
         }
 
