@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Райо Калентон</string>
+    <string name="app_name">Rayo Calenton</string>
     <string name="Intensidad">Интенсивность света: --</string>
     <string name="Orientacion">Правильная ориентация: --</string>
     <string name="Recomendacion">Рекомендация: --</string>

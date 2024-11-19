@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ラヨ・カレントン</string>
+    <string name="app_name">Rayo Calenton</string>
     <string name="Intensidad">光の強さ: --</string>
     <string name="Orientacion">正しい方向: --</string>
     <string name="Recomendacion">おすすめ: --</string>
