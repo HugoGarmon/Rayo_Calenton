@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Râyo Calenton</string>
+    <string name="Intensidad">Liuhtes sterke: --</string>
+    <string name="Orientacion">Rehte gewende: --</string>
+    <string name="Recomendacion">Empfâlung: --</string>
+    <string name="RecomendacionPocaLuz">Empfâlung: Wenic liuht, sôh ein mere sunnenlîchez stêt.</string>
+    <string name="RecomendacionMediaLuz">Empfâlung: Mâze liuht, gût für schâtigen boum.</string>
+    <string name="RecomendacionMuchaLuz">Empfâlung: Genuoc liuht für sunnen boum.</string>
+    <string name="OrientacionBuena">Rehte gewende: Jâ</string>
+    <string name="OrientacionMala">Rehte gewende: Nê</string>
+</resources>

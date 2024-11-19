@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Райо Калентон</string>
+    <string name="Intensidad">Интенсивность света: --</string>
+    <string name="Orientacion">Правильная ориентация: --</string>
+    <string name="Recomendacion">Рекомендация: --</string>
+    <string name="RecomendacionPocaLuz">Рекомендация: Мало света, найдите более солнечное место.</string>
+    <string name="RecomendacionMediaLuz">Рекомендация: Умеренный свет, идеально для тенелюбивых растений.</string>
+    <string name="RecomendacionMuchaLuz">Рекомендация: Оптимальный свет для светолюбивых растений.</string>
+    <string name="OrientacionBuena">Правильная ориентация: Да</string>
+    <string name="OrientacionMala">Правильная ориентация: Нет</string>
+
+</resources>

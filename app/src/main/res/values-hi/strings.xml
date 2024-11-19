@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">रायो कैलेंटोन</string>
+    <string name="Intensidad">प्रकाश की तीव्रता: --</string>
+    <string name="Orientacion">सही अभिविन्यास: --</string>
+    <string name="Recomendacion">सिफारिश: --</string>
+    <string name="RecomendacionPocaLuz">सिफारिश: कम रोशनी, एक अधिक धूप वाले स्थान की तलाश करें।</string>
+    <string name="RecomendacionMediaLuz">सिफारिश: मध्यम रोशनी, छाया वाले पौधों के लिए आदर्श।</string>
+    <string name="RecomendacionMuchaLuz">सिफारिश: धूप वाले पौधों के लिए उपयुक्त रोशनी।</string>
+    <string name="OrientacionBuena">सही अभिविन्यास: हाँ</string>
+    <string name="OrientacionMala">सही अभिविन्यास: नहीं</string>
+</resources>

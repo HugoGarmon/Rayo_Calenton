@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ラヨ・カレントン</string>
+    <string name="Intensidad">光の強さ: --</string>
+    <string name="Orientacion">正しい方向: --</string>
+    <string name="Recomendacion">おすすめ: --</string>
+    <string name="RecomendacionPocaLuz">おすすめ: 光が少ない、もっと日当たりの良い場所を探してください。</string>
+    <string name="RecomendacionMediaLuz">おすすめ: 適度な光、日陰の植物に最適です。</string>
+    <string name="RecomendacionMuchaLuz">おすすめ: 日光を必要とする植物に最適な光です。</string>
+    <string name="OrientacionBuena">正しい方向: はい</string>
+    <string name="OrientacionMala">正しい方向: いいえ</string>
+</resources>

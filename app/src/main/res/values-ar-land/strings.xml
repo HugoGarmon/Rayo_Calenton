@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">رايو كالينتون</string>
+    <string name="Intensidad">شدة الضوء: --</string>
+    <string name="Orientacion">الاتجاه الصحيح: --</string>
+    <string name="Recomendacion">توصية: --</string>
+    <string name="RecomendacionPocaLuz">توصية: ضوء قليل، ابحث عن مكان أكثر إشراقًا.</string>
+    <string name="RecomendacionMediaLuz">توصية: ضوء معتدل، مثالي للنباتات التي تفضل الظل.</string>
+    <string name="RecomendacionMuchaLuz">توصية: ضوء مثالي للنباتات التي تحتاج للشمس.</string>
+    <string name="OrientacionBuena">الاتجاه الصحيح: نعم</string>
+    <string name="OrientacionMala">الاتجاه الصحيح: لا</string>
+</resources>
