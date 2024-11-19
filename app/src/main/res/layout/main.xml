@@ -15,6 +15,12 @@
         android:textSize="20sp"
         android:layout_marginBottom="20dp"
         android:gravity="center"/>
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="40000"
+        android:id="@+id/bar"/>
 
     <TextView
         android:id="@+id/text_orientation"

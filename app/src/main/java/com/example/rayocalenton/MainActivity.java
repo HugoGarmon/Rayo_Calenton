@@ -5,6 +5,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -62,9 +63,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onSensorChanged(SensorEvent event) {
+        ProgressBar bar = (ProgressBar) findViewById(R.id.bar);
         if (event.sensor.getType() == Sensor.TYPE_LIGHT) {
             float lightValue = event.values[0];
             lightValueText.setText(getString(R.string.Intensidad) + " " + lightValue + " lx");
+            bar.setProgress((int) lightValue);
 
 
             // Recomendación basada en la luz
