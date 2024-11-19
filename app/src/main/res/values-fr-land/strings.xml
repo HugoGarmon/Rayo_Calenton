@@ -5,7 +5,7 @@
     <string name="Orientacion">Orientation correcte : --</string>
     <string name="Recomendacion">Recommandation : --</string>
     <string name="RecomendacionPocaLuz">Recommandation : Faible lumière, cherchez un endroit plus ensoleillé.</string>
-    <string name="RecomendacionMediaLuz">Recommandation : Lumière modérée, idéale pour les plantes d'ombre.</string>
+    <string name="RecomendacionMediaLuz">Recommandation : Lumière modérée, idéale pour les plantes d´ombre.</string>
     <string name="RecomendacionMuchaLuz">Recommandation : Lumière optimale pour les plantes de plein soleil.</string>
     <string name="OrientacionBuena">Orientation correcte : Oui</string>
     <string name="OrientacionMala">Orientation correcte : Non</string>
