@@ -5,6 +5,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,8 +16,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     private SensorManager sensorManager;
     private Sensor lightSensor, accelerometerSensor;
+    private TextView compassText;
+    private ImageView compassImage;
 
-    private TextView lightValueText, orientationText, recommendationText;
+    private float[] gravity;
+    private float[] geomagnetic;
+    private float currentAzimuth = 0f;
+
+    private TextView lightValueText, orientationText, recommendationText, brujulaText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         lightValueText = findViewById(R.id.text_light_value);
         orientationText = findViewById(R.id.text_orientation);
         recommendationText = findViewById(R.id.text_recommendation);
+        brujulaText = findViewById(R.id.compass_text);
 
         // Configurar sensores
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
@@ -42,6 +50,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if (accelerometerSensor == null) {
             orientationText.setText("Sensor de acelerómetro no disponible.");
         }
+
+        Sensor magnetometer = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        if (accelerometerSensor == null || magnetometer == null) {
+            compassText.setText("Sensores necesarios no disponibles.");
+        }
+
+        ImageView compassImage = findViewById(R.id.compass_image);
+
     }
 
     @Override
@@ -81,18 +97,51 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         }
 
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            float x = event.values[0];
-            float y = event.values[1];
-            float z = event.values[2];
+            gravity = event.values;
+        }
+        if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD) {
+            geomagnetic = event.values;
+        }
 
-            // Verificar orientación (debe estar hacia arriba)
-            if (Math.abs(z) > Math.abs(x) && Math.abs(z) > Math.abs(y)) {
-                orientationText.setText(R.string.OrientacionMala);
-            } else {
-                orientationText.setText(R.string.OrientacionBuena);
+        if (gravity != null && geomagnetic != null) {
+            float[] R = new float[9];
+            float[] I = new float[9];
+
+            if (SensorManager.getRotationMatrix(R, I, gravity, geomagnetic)) {
+                float[] orientation = new float[3];
+                SensorManager.getOrientation(R, orientation);
+
+                // Dirección en radianes, convertir a grados
+                float azimuth = (float) Math.toDegrees(orientation[0]);
+
+                // Asegurar que esté en rango 0-360
+                if (azimuth < 0) {
+                    azimuth += 360;
+                }
+
+                // Mostrar el ángulo en texto
+                compassText.setText("Dirección: " + Math.round(azimuth) + "°");
+
+                // Rotar la imagen suavemente
+                rotateCompassImage(azimuth);
             }
         }
+
     }
+    private void rotateCompassImage(float azimuth) {
+        // Calcula la diferencia para rotación suave
+        float rotationAngle = azimuth - currentAzimuth;
+
+        // Rota la imagen
+        compassImage.animate()
+                .rotationBy(rotationAngle)
+                .setDuration(500) // Duración de la animación en milisegundos
+                .start();
+
+        // Actualizar el ángulo actual
+        currentAzimuth = azimuth;
+    }
+
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {

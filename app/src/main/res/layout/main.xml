@@ -38,4 +38,19 @@
         android:text="@string/Recomendacion"
         android:textSize="18sp"
         android:gravity="center"/>
+
+    <ImageView
+        android:id="@+id/compass_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/compass"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:id="@+id/compass_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dirección: --"
+        android:textSize="20sp"
+        android:gravity="center"/>
 </LinearLayout>
