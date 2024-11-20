@@ -10,20 +10,16 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.rayocalenton.R;
-
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
     private SensorManager sensorManager;
-    private Sensor lightSensor, accelerometerSensor;
-    private TextView compassText;
+    private Sensor lightSensor, accelerometerSensor, magnetometerSensor;
+    private TextView lightValueText, orientationText, recommendationText, compassText;
     private ImageView compassImage;
 
     private float[] gravity;
     private float[] geomagnetic;
     private float currentAzimuth = 0f;
-
-    private TextView lightValueText, orientationText, recommendationText, brujulaText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +30,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         lightValueText = findViewById(R.id.text_light_value);
         orientationText = findViewById(R.id.text_orientation);
         recommendationText = findViewById(R.id.text_recommendation);
-        brujulaText = findViewById(R.id.compass_text);
+        compassText = findViewById(R.id.compass_text);
+        compassImage = findViewById(R.id.compass_image);
 
         // Configurar sensores
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
@@ -47,17 +44,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         // Sensor de acelerómetro
         accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        if (accelerometerSensor == null) {
-            orientationText.setText("Sensor de acelerómetro no disponible.");
-        }
+        magnetometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
 
-        Sensor magnetometer = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
-        if (accelerometerSensor == null || magnetometer == null) {
+        if (accelerometerSensor == null || magnetometerSensor == null) {
             compassText.setText("Sensores necesarios no disponibles.");
         }
-
-        ImageView compassImage = findViewById(R.id.compass_image);
-
     }
 
     @Override
@@ -69,6 +60,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if (accelerometerSensor != null) {
             sensorManager.registerListener(this, accelerometerSensor, SensorManager.SENSOR_DELAY_NORMAL);
         }
+        if (magnetometerSensor != null) {
+            sensorManager.registerListener(this, magnetometerSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        }
     }
 
     @Override
@@ -79,12 +73,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        ProgressBar bar = (ProgressBar) findViewById(R.id.bar);
+        ProgressBar bar = findViewById(R.id.bar);
+
+        // Sensor de luz
         if (event.sensor.getType() == Sensor.TYPE_LIGHT) {
             float lightValue = event.values[0];
             lightValueText.setText(getString(R.string.Intensidad) + " " + lightValue + " lx");
-            bar.setProgress((int) lightValue);
 
+            // Normalizar el progreso de la barra
+            int progress = (int) Math.min((lightValue / 1000) * 100, 100); // Escalar 0-100
+            bar.setProgress(progress);
 
             // Recomendación basada en la luz
             if (lightValue < 100) {
@@ -96,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             }
         }
 
+        // Sensores de orientación
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
             gravity = event.values;
         }
@@ -113,35 +112,19 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
                 // Dirección en radianes, convertir a grados
                 float azimuth = (float) Math.toDegrees(orientation[0]);
+                if (azimuth < 0) azimuth += 360;
 
-                // Asegurar que esté en rango 0-360
-                if (azimuth < 0) {
-                    azimuth += 360;
-                }
-
-                // Mostrar el ángulo en texto
                 compassText.setText("Dirección: " + Math.round(azimuth) + "°");
-
-                // Rotar la imagen suavemente
-                rotateCompassImage(azimuth);
+                rotateCompassImage(-azimuth);
             }
         }
-
     }
+
     private void rotateCompassImage(float azimuth) {
-        // Calcula la diferencia para rotación suave
         float rotationAngle = azimuth - currentAzimuth;
-
-        // Rota la imagen
-        compassImage.animate()
-                .rotationBy(rotationAngle)
-                .setDuration(500) // Duración de la animación en milisegundos
-                .start();
-
-        // Actualizar el ángulo actual
+        compassImage.animate().rotationBy(rotationAngle).setDuration(0).start();
         currentAzimuth = azimuth;
     }
-
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
