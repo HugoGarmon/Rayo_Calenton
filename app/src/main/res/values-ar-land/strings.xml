@@ -9,4 +9,6 @@
     <string name="RecomendacionMuchaLuz">توصية: ضوء مثالي للنباتات التي تحتاج للشمس.</string>
     <string name="OrientacionBuena">الاتجاه الصحيح: نعم</string>
     <string name="OrientacionMala">الاتجاه الصحيح: لا</string>
+    <string name="Guardar">حفظ</string>
+    <string name="Lista">"قائمة الأماكن "</string>
 </resources>

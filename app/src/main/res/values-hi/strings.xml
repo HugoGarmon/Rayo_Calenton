@@ -9,4 +9,6 @@
     <string name="RecomendacionMuchaLuz">सिफारिश: धूप वाले पौधों के लिए उपयुक्त रोशनी।</string>
     <string name="OrientacionBuena">सही अभिविन्यास: हाँ</string>
     <string name="OrientacionMala">सही अभिविन्यास: नहीं</string>
+    <string name="Guardar">बचाना</string>
+    <string name="Lista">स्थानों की सूची</string>
 </resources>

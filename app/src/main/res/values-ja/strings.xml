@@ -9,4 +9,6 @@
     <string name="RecomendacionMuchaLuz">おすすめ: 日光を必要とする植物に最適な光です。</string>
     <string name="OrientacionBuena">正しい方向: はい</string>
     <string name="OrientacionMala">正しい方向: いいえ</string>
+    <string name="Guardar">保存する</string>
+    <string name="Lista">場所のリスト</string>
 </resources>

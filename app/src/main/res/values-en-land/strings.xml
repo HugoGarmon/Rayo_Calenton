@@ -9,4 +9,6 @@
     <string name="RecomendacionMuchaLuz">Recommendation: Optimal light for sun-loving plants.</string>
     <string name="OrientacionBuena">Correct orientation: Yes</string>
     <string name="OrientacionMala">Correct orientation: No</string>
+    <string name="Guardar">Save</string>
+    <string name="Lista">List of places</string>
 </resources>

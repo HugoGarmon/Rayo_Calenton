@@ -9,5 +9,7 @@
     <string name="RecomendacionMuchaLuz">Рекомендация: Оптимальный свет для светолюбивых растений.</string>
     <string name="OrientacionBuena">Правильная ориентация: Да</string>
     <string name="OrientacionMala">Правильная ориентация: Нет</string>
+    <string name="Guardar">Сохранить</string>
+    <string name="Lista">Список мест</string>
 
 </resources>

@@ -1,10 +1,13 @@
 package com.example.rayocalenton;
 
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -15,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private SensorManager sensorManager;
     private Sensor lightSensor, accelerometerSensor, magnetometerSensor;
     private TextView lightValueText, orientationText, recommendationText, compassText;
+    private Button btnGuardar, btnLista;
     private ImageView compassImage;
 
     private float[] gravity;
@@ -32,6 +36,28 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         recommendationText = findViewById(R.id.text_recommendation);
         compassText = findViewById(R.id.compass_text);
         compassImage = findViewById(R.id.compass_image);
+        btnGuardar = findViewById(R.id.btnGuardar);
+        btnLista = findViewById(R.id.btnLista);
+
+
+        View.OnClickListener listener1 = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Guardar.class);
+                startActivity(intent);
+            }
+        };
+        btnGuardar.setOnClickListener(listener1);
+
+        View.OnClickListener listener2 = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(getApplicationContext(), Lista.class);
+                startActivity(intent2);
+            }
+        };
+        btnLista.setOnClickListener(listener2);
+
 
         // Configurar sensores
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
