@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Rayo Calenton</string>
-    <string name="Intensidad">Intensidad de luz: --</string>
+    <string name="Intensidad">Intensidad de luz >> Nivel</string>
     <string name="Orientacion">Orientación correcta: --</string>
     <string name="Recomendacion">Recomendacion: --</string>
     <string name="RecomendacionPocaLuz">Recomendación: Poca luz, busca un lugar más soleado.</string>

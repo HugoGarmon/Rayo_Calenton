@@ -4,6 +4,48 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar localidad"
+        android:textSize="30dp"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Localizacion"
+        android:id="@+id/textLocalidad"/>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/tabla">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/row1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nivel : "
+                android:id="@+id/textNivel"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Orientacion : "
+                android:id="@+id/textoOrientacion"/>
+
+
+        </TableRow>
+
+    </TableLayout>
+
+
+
     <Button
         android:id="@+id/btnVolver"
         android:layout_width="match_parent"

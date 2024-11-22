@@ -104,11 +104,23 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         // Sensor de luz
         if (event.sensor.getType() == Sensor.TYPE_LIGHT) {
             float lightValue = event.values[0];
-            lightValueText.setText(getString(R.string.Intensidad) + " " + lightValue + " lx");
+            if(lightValue < 1200){
+                lightValueText.setText(getString(R.string.Intensidad) + " 1");
+            }else if(lightValue < 2400){
+                lightValueText.setText(getString(R.string.Intensidad) + " 2");
+            }else if(lightValue < 3600){
+                lightValueText.setText(getString(R.string.Intensidad) + " 3");
+            }else if(lightValue < 4800){
+                lightValueText.setText(getString(R.string.Intensidad) + " 4");
+            }else if(lightValue < 6000){
+                lightValueText.setText(getString(R.string.Intensidad) + " 5");
+            }else{
+                lightValueText.setText(getString(R.string.Intensidad) + " 5+");
+            }
+//            lightValueText.setText(getString(R.string.Intensidad) + " " + lightValue + " lx");
 
-            // Normalizar el progreso de la barra
-            int progress = (int) Math.min((lightValue / 1000) * 100, 100); // Escalar 0-100
-            bar.setProgress(progress);
+            // Asignar el valor de la luz a la barra
+            bar.setProgress((int) lightValue);
 
             // Recomendación basada en la luz
             if (lightValue < 100) {
