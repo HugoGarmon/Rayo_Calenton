@@ -150,6 +150,23 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
                 // Actualizar la imagen de la flecha
                 compassText.setText("Dirección: " + Math.round(azimuth) + "°");
+                if(azimuth <= 22.5 || azimuth > 337.5){
+                    compassText.setText("Estas mirando hacia el Norte");
+                }else if (azimuth > 22.5 && azimuth <= 67.5 ){
+                    compassText.setText("Estas mirando hacia el Noreste");
+                }else if (azimuth > 67.5 && azimuth <= 112.5 ){
+                    compassText.setText("Estas mirando hacia el Este");
+                }else if (azimuth > 112.5 && azimuth <= 157.5 ){
+                    compassText.setText("Estas mirando hacia el Sureste");
+                }else if (azimuth > 157.5 && azimuth <= 202.5 ){
+                    compassText.setText("Estas mirando hacia el Sur");
+                }else if (azimuth > 202.5 && azimuth <= 247.5 ){
+                    compassText.setText("Estas mirando hacia el Suroeste");
+                }else if (azimuth > 247.5 && azimuth <= 292.5 ){
+                    compassText.setText("Estas mirando hacia el Oeste");
+                }else if (azimuth > 292.5 && azimuth <= 337.5 ){
+                    compassText.setText("Estas mirando hacia el Noroeste");
+                }
                 updateArrowRotation(azimuth);
             }
         }
