@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 lightValueText.setText(getString(R.string.Intensidad) + " 5+");
                 level = "5+";
             }
+
 //            lightValueText.setText(getString(R.string.Intensidad) + " " + lightValue + " lx");
 
             // Asignar el valor de la luz a la barra
@@ -183,6 +184,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             }
         }
     }
+
 
     private void updateArrowRotation(float azimuth) {
         ImageView arrowImage = findViewById(R.id.compass_image); // Cambia "arrow_image" por el ID de tu ImageView

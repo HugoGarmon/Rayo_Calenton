@@ -1,7 +1,9 @@
 package com.example.rayocalenton;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -30,5 +32,17 @@ public class Lista extends AppCompatActivity {
                 finish();
             }
         });
+        AdapterView.OnItemClickListener listita = new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+            //Intent planta = new Intent(this.Lista,Planta.class);
+            //planta.putExtra(AQUI EL NIVEL);
+            //planta.putExtra(AQUI LA ORIENTACION);
+                //  startActivity(planta);
+            }
+        };
+
+
+
     }
 }

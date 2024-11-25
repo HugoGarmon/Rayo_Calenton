@@ -52,8 +52,8 @@ public class BaseDeDatos extends SQLiteOpenHelper {
                 String location = cursor.getString(1);
                 String level = cursor.getString(2);
                 String orientation = cursor.getString(3);
-                String cadena = "La planta "+id+" Localizacion: "+ location+ " Nivel: "+level+" Orientación: "+orientation;
-
+               // String cadena = "La planta "+id+" Localizacion: "+ location+ " Nivel: "+level+" Orientación: "+orientation;
+                String cadena = location;
                 locas.add(cadena);
             }while (cursor.moveToNext());
         }
