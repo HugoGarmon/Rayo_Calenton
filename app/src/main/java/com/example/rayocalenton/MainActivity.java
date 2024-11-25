@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private float[] gravity;
     private float[] geomagnetic;
     private float currentAzimuth = 0f;
+    String level = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +41,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         btnLista = findViewById(R.id.btnLista);
 
 
+
+
         View.OnClickListener listener1 = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Guardar.class);
+                String orientation = compassText.getText().toString();
+                intent.putExtra("Nivel",level);
+                intent.putExtra("Orientacion", orientation);
                 startActivity(intent);
             }
         };
@@ -105,17 +111,23 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if (event.sensor.getType() == Sensor.TYPE_LIGHT) {
             float lightValue = event.values[0];
             if(lightValue < 1200){
+                level = "1";
                 lightValueText.setText(getString(R.string.Intensidad) + " 1");
             }else if(lightValue < 2400){
                 lightValueText.setText(getString(R.string.Intensidad) + " 2");
+                level = "2";
             }else if(lightValue < 3600){
                 lightValueText.setText(getString(R.string.Intensidad) + " 3");
+                level = "3";
             }else if(lightValue < 4800){
                 lightValueText.setText(getString(R.string.Intensidad) + " 4");
+                level = "4";
             }else if(lightValue < 6000){
                 lightValueText.setText(getString(R.string.Intensidad) + " 5");
+                level = "5";
             }else{
                 lightValueText.setText(getString(R.string.Intensidad) + " 5+");
+                level = "5+";
             }
 //            lightValueText.setText(getString(R.string.Intensidad) + " " + lightValue + " lx");
 

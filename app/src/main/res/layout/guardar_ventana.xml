@@ -14,33 +14,41 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Localizacion"
-        android:id="@+id/textLocalidad"/>
+        android:hint="Localización"
+        android:id="@+id/editLocalidad"/>
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:id="@+id/tabla">
 
         <TableRow
+            android:id="@+id/row1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/row1">
+            android:layout_height="match_parent"
+            >
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/textNivel"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
                 android:text="Nivel : "
-                android:id="@+id/textNivel"/>
+
+                />
+
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/textoOrientacion"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Orientacion : "
-                android:id="@+id/textoOrientacion"/>
-
-
+                />
         </TableRow>
+
+
+
+
+
 
     </TableLayout>
 
@@ -50,6 +58,12 @@
         android:id="@+id/btnVolver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="volver" />
+        android:text="Volver" />
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar" />
+
 
 </LinearLayout>
